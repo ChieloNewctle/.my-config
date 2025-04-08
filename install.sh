@@ -1,16 +1,26 @@
 #!/bin/bash
-TIMESTAMP="$(date +%s)"
+
+CONFIGS=(
+  "atuin"
+  "nvim"
+  "zsh"
+  "starship"
+)
+
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
-for NAME in "atuin" "nvim" "zsh"; do
-  CONFIG="$HOME/.config/$NAME"
-  TARGET="$SCRIPT_DIR/$NAME"
-  if [[ -L "$CONFIG" ]] && [[ "$(readlink "$CONFIG")" == "$TARGET" ]]; then
-    echo "the configuration of $NAME has been installed"
+
+timestamp="$(date +%s)"
+
+for name in "${CONFIGS[@]}"; do
+  symlink="$HOME/.config/$name"
+  target="$SCRIPT_DIR/$name"
+  if [[ -L "$symlink" ]] && [[ "$(readlink "$symlink")" == "$target" ]]; then
+    echo "the configuration of $name has been installed"
   else
-    if [[ -e "$CONFIG" ]]; then
-      mv "$CONFIG" "$HOME/.config/$NAME.$TIMESTAMP.bak"
+    if [[ -e "$symlink" ]]; then
+      mv "$symlink" "$HOME/.config/$name.$timestamp.bak"
     fi
-    ln -s -T "$TARGET" "$CONFIG"
-    echo "the configuration of $NAME is installed"
+    ln -s -T "$target" "$symlink"
+    echo "the configuration of $name is installed"
   fi
 done
