@@ -11,6 +11,7 @@ CONFIGS=(
   "nvim"
   "starship"
   "tmux"
+  "zsh"
 )
 
 backup_and_link_to() {
