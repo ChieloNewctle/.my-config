@@ -2,4 +2,4 @@
 
 ## tmux
 
-- `PREFIX` + `i` to install new plugins.
+- `PREFIX` + `I` to install new plugins.
