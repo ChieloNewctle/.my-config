@@ -1,29 +1,36 @@
 #!/bin/bash
 
-CONFIGS=(
-  "atuin"
-  "nvim"
-  "zsh"
-  "starship"
-  "tmux"
-)
-
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
 (cd "$SCRIPT_DIR" && git submodule update --init --recursive || exit)
 
-timestamp="$(date +%s)"
+TIMESTAMP="$(date +%s)"
 
-for name in "${CONFIGS[@]}"; do
-  symlink="$HOME/.config/$name"
-  target="$SCRIPT_DIR/$name"
+CONFIGS=(
+  "atuin"
+  "nvim"
+  "starship"
+  "tmux"
+)
+
+backup_and_link_to() {
+  symlink="$1"
+  target="$2"
   if [[ -L "$symlink" ]] && [[ "$(readlink "$symlink")" == "$target" ]]; then
-    echo "the configuration of $name has been installed"
+    echo "$symlink has been installed"
   else
     if [[ -e "$symlink" ]]; then
-      mv "$symlink" "$HOME/.config/$name.$timestamp.bak"
+      mv "$symlink" "$symlink.$TIMESTAMP.bak"
     fi
     ln -s -T "$target" "$symlink"
-    echo "the configuration of $name is installed"
+    echo "$symlink is installed"
   fi
+}
+
+for name in "${CONFIGS[@]}"; do
+  backup_and_link_to "$HOME/.config/$name" "$SCRIPT_DIR/$name"
+done
+
+for item in zshenv zshrc; do
+  backup_and_link_to "$HOME/.$item" "$SCRIPT_DIR/zsh/$item"
 done
