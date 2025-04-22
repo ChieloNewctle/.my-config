@@ -44,7 +44,7 @@ fi
 
 # eza
 if which eza >/dev/null; then
-  alias ls="eza"
+  alias ls="eza -b"
 fi
 EZA_ROOT="${HOME}/.eza"
 if [[ -d "${EZA_ROOT}" ]]; then
@@ -57,10 +57,3 @@ select-word-style bash
 
 # customization
 alias without_proxy='env http_proxy="" https_proxy=""'
-
-# nvim
-if which nvim >/dev/null; then
-  export EDITOR="$(which nvim)"
-fi
-
-bindkey -e
