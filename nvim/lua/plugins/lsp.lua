@@ -6,6 +6,9 @@ return {
         enabled = true,
       },
       servers = {
+        clangd = {
+          filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "hpp" },
+        },
         yamlls = {
           settings = {
             yaml = {
