@@ -26,7 +26,8 @@ return {
           css = { "prettier" },
           html = { "prettier" },
           javascript = { "prettier" },
-          json = { "fixjson", "prettier" },
+          json = { "prettier" },
+          json5 = { "prettier" },
           lua = { "stylua" },
           markdown = { "prettier" },
           python = { "ruff_format" },
@@ -48,7 +49,6 @@ return {
       ensure_installed = {
         "clang-format",
         "cmakelang",
-        "fixjson",
         "gersemi",
         "prettier",
         "ruff",
