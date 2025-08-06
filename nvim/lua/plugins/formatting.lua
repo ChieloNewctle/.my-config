@@ -35,6 +35,7 @@ return {
           sh = { "shfmt" },
           zsh = { "shfmt" },
           bash = { "shfmt" },
+          scss = { "prettier" },
           typescript = { "prettier" },
           typescriptreact = { "prettier" },
           toml = { "taplo" },
