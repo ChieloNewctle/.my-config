@@ -35,6 +35,9 @@ fi
 
 # direnv
 if which direnv >/dev/null; then
+  if [ -n "$TMUX" ] && [ -n "$DIRENV_DIR" ]; then
+    unset -m "DIRENV_*"
+  fi
   eval "$(direnv hook zsh)"
 fi
 
