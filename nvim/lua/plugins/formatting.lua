@@ -20,9 +20,10 @@ return {
           shfmt = { prepend_args = { "-i", "4" } },
         },
         formatters_by_ft = {
-          c = { "clang_format" },
+          c = { "clang-format" },
+          cpp = { "clang-format" },
+          cuda = { "clang-format" },
           cmake = { "gersemi" },
-          cpp = { "clang_format" },
           css = { "prettier" },
           html = { "prettier" },
           javascript = { "prettier" },
