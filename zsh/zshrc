@@ -6,6 +6,16 @@ if [[ ! -n "${SSH_CONNECTION}" ]]; then
   fi
 fi
 
+# asdf completions
+if [[ -n "${ASDF_DATA_DIR}" ]]; then
+  _asdf_completions="${ASDF_DATA_DIR}/completions/_asdf"
+  if [[ ! -e "$_asdf_completions" ]]; then
+    mkdir -p "$(dirname "$_asdf_completions")"
+    asdf completion zsh >"$_asdf_completions"
+  fi
+  fpath=("$(dirname "$_asdf_completions")" $fpath)
+fi
+
 # zim
 ZIM_CONFIG_FILE="${HOME}/.config/zsh/zimrc"
 ZIM_HOME="${HOME}/.cache/zim"
