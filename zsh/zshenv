@@ -1,11 +1,12 @@
 skip_global_compinit=1
+typeset -U path
 
 # user basic env
 if [[ -e "${HOME}/.zsh_custom_env" ]]; then
   source "${HOME}/.zsh_custom_env"
 fi
 
-export PATH="${HOME}/.local/bin:${PATH}"
+path=("${HOME}/.local/bin" $path)
 
 # cargo
 if [[ -d "${HOME}/.cargo" ]]; then
@@ -15,7 +16,7 @@ fi
 # asdf
 if which asdf >/dev/null; then
   export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
-  export PATH="${ASDF_DATA_DIR}/shims:$PATH"
+  path=("${ASDF_DATA_DIR}/shims" $path)
 
   if [[ -d "${ASDF_DATA_DIR}/plugins/golang" ]]; then
     . "${ASDF_DATA_DIR}/plugins/golang/set-env.zsh"

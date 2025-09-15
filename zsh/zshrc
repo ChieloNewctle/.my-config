@@ -58,7 +58,7 @@ if which eza >/dev/null; then
 fi
 EZA_ROOT="${HOME}/.eza"
 if [[ -d "${EZA_ROOT}" ]]; then
-  export FPATH="${EZA_ROOT}/completions/zsh:${FPATH}"
+  fpath=("${EZA_ROOT}/completions/zsh" $fpath)
 fi
 
 # select word style
