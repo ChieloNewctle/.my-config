@@ -44,4 +44,14 @@ return {
       },
     },
   },
+  {
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        treesitter = {
+          labels = "",
+        },
+      },
+    },
+  },
 }
