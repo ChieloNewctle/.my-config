@@ -1,5 +1,5 @@
 # terminal integration
-if [[ ! -n "${SSH_CONNECTION}" ]]; then
+if [[ ! -v SSH_CONNECTION ]]; then
   WEZTERM_SH_FILE="${HOME}/.config/zsh/wezterm.sh"
   if [[ -e "${WEZTERM_SH_FILE}" ]]; then
     source "${WEZTERM_SH_FILE}"
@@ -7,7 +7,7 @@ if [[ ! -n "${SSH_CONNECTION}" ]]; then
 fi
 
 # asdf completions
-if [[ -n "${ASDF_DATA_DIR}" ]]; then
+if [[ -v ASDF_DATA_DIR ]]; then
   _asdf_completions="${ASDF_DATA_DIR}/completions/_asdf"
   if [[ ! -e "$_asdf_completions" ]]; then
     mkdir -p "$(dirname "$_asdf_completions")"

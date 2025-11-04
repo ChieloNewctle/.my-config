@@ -29,7 +29,7 @@ fi
 
 # direnv
 if which direnv >/dev/null; then
-  if [[ (-n "$NVIM" || -n "$TMUX") && -n "$DIRENV_DIR" ]]; then
+  if [[ (-v NVIM || -v TMUX) && -v DIRENV_DIR ]]; then
     unset -m "DIRENV_*"
   fi
   eval "$(direnv hook zsh)"
