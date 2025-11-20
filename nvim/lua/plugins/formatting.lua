@@ -29,6 +29,7 @@ return {
           html = { "prettier" },
           javascript = { "prettier" },
           json = { "prettier" },
+          jsonc = { "prettier" },
           json5 = { "prettier" },
           lua = { "stylua" },
           markdown = { "prettier" },
