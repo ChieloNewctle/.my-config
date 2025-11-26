@@ -1,6 +1,6 @@
+# Used under MIT License.
 # Copyright (c) 2018-Present Wez Furlong
-#
-# https://github.com/wezterm/wezterm/blob/7d0bff0698813c9feeba91a342cd6df94aa34630/assets/shell-integration/wezterm.sh
+# https://raw.githubusercontent.com/wezterm/wezterm/ac08cdf6d72afd726cc1591c1ec9d80aa883ea41/assets/shell-integration/wezterm.sh
 
 # shellcheck shell=bash
 
@@ -479,6 +479,7 @@ __wezterm_semantic_precmd() {
       PS1='\[\e]133;P;k=i\a\]'$PS1'\[\e]133;B\a\]'
       PS2='\[\e]133;P;k=s\a\]'$PS2'\[\e]133;B\a\]'
     fi
+    __wezterm_check_ps1="$PS1"
   fi
   if [[ "$__wezterm_semantic_precmd_executing" != "" ]] ; then
     # Report last command status
@@ -498,7 +499,7 @@ __wezterm_semantic_precmd() {
 
 function __wezterm_semantic_preexec() {
   # Restore the original PS1/PS2 if set
-  if [ -n "${__wezterm_save_ps1+1}" ]; then
+  if [[ -n "${__wezterm_save_ps1+1}" && "${__wezterm_check_ps1-}" == "${PS1}" ]]; then
 	  PS1="$__wezterm_save_ps1"
 	  PS2="$__wezterm_save_ps2"
 	  unset __wezterm_save_ps1
