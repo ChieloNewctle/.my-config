@@ -1,0 +1,25 @@
+# NOTICE
+# ======
+#
+# Settings of `palettes.catppuccin_*` are from `catppuccin/starship` on GitHub.
+# Copyright (c) 2021 Catppuccin
+# https://github.com/catppuccin/starship
+#
+# Settings of `symbol`s are from https://starship.rs/presets/nerd-font.
+#
+# see `justfile` for URLs being used.
+
+"$schema" = "https://starship.rs/config-schema.json"
+add_newline = true
+palette = "catppuccin_mocha"
+format = "$all$line_break$character"
+
+[time]
+disabled = false
+
+[username]
+show_always = true
+
+[hostname]
+ssh_symbol = " "
+ssh_only = false

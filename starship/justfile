@@ -1,0 +1,29 @@
+_default:
+  @sed -s '$s/$/\n/' \
+    ./parts/config.toml \
+    ./themes/* \
+    | just _coalesce \
+    > starship.toml
+
+_coalesce:
+  @sed ':a;N;$!ba;s/^[[:space:]]*//;s/[[:space:]]*$//' | tr -d '\r'
+
+update:
+  @just theme-catppuccin
+  @just theme-nerd-font-symbols
+
+theme-catppuccin:
+  @for i in frappe latte macchiato mocha; do \
+    curl -sSLJ \
+      https://raw.githubusercontent.com/catppuccin/starship/refs/heads/main/themes/$i.toml \
+      | just _coalesce \
+      > ./themes/catppuccin-$i.toml; \
+  done
+
+theme-nerd-font-symbols:
+  @curl -sSLJ \
+    https://starship.rs/presets/toml/nerd-font-symbols.toml \
+    | tail -n +3 \
+    | sed ':a;N;$!ba;s/\[hostname\][^\[]*//' \
+    | just _coalesce \
+    > ./themes/nerd-font-symbols.toml

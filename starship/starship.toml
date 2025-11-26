@@ -1,9 +1,18 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+# NOTICE
+# ======
+#
+# Settings of `palettes.catppuccin_*` are from `catppuccin/starship` on GitHub.
+# Copyright (c) 2021 Catppuccin
+# https://github.com/catppuccin/starship
+#
+# Settings of `symbol`s are from https://starship.rs/presets/nerd-font.
+#
+# see `justfile` for URLs being used.
 
+"$schema" = "https://starship.rs/config-schema.json"
 add_newline = true
-palette = 'catppuccin_mocha'
-
-format = '$all$line_break$character'
+palette = "catppuccin_mocha"
+format = "$all$line_break$character"
 
 [time]
 disabled = false
@@ -15,11 +24,6 @@ show_always = true
 ssh_symbol = " "
 ssh_only = false
 
-# settings of `palettes.catppuccin_*` are from catppuccin/starship on github
-#
-# Copyright (c) 2021 Catppuccin
-#
-# https://github.com/catppuccin/starship
 [palettes.catppuccin_frappe]
 rosewater = "#f2d5cf"
 flamingo = "#eebebe"
@@ -132,15 +136,20 @@ base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
 
-# [nerd font symbols preset](https://starship.rs/presets/nerd-font)
 [aws]
-symbol = "  "
+symbol = " "
 
 [buf]
 symbol = " "
 
+[bun]
+symbol = " "
+
 [c]
 symbol = " "
+
+[cpp]
+symbol = " "
 
 [cmake]
 symbol = " "
@@ -153,6 +162,9 @@ symbol = " "
 
 [dart]
 symbol = " "
+
+[deno]
+symbol = " "
 
 [directory]
 read_only = " 󰌾"
@@ -169,8 +181,14 @@ symbol = " "
 [fennel]
 symbol = " "
 
+[fortran]
+symbol = " "
+
 [fossil_branch]
 symbol = " "
+
+[gcloud]
+symbol = " "
 
 [git_branch]
 symbol = " "
@@ -180,6 +198,9 @@ tag_symbol = '  '
 
 [golang]
 symbol = " "
+
+[gradle]
+symbol = " "
 
 [guix_shell]
 symbol = " "
@@ -192,7 +213,6 @@ symbol = " "
 
 [hg_branch]
 symbol = " "
-
 
 [java]
 symbol = " "
@@ -230,6 +250,7 @@ Alpine = " "
 AlmaLinux = " "
 Amazon = " "
 Android = " "
+AOSC = " "
 Arch = " "
 Artix = " "
 CachyOS = " "
@@ -283,6 +304,9 @@ symbol = " "
 [pijul_channel]
 symbol = " "
 
+[pixi]
+symbol = "󰏗 "
+
 [python]
 symbol = " "
 
@@ -298,11 +322,14 @@ symbol = "󱘗 "
 [scala]
 symbol = " "
 
+[status]
+symbol = " "
+
 [swift]
 symbol = " "
 
+[xmake]
+symbol = " "
+
 [zig]
 symbol = " "
-
-[gradle]
-symbol = " "
