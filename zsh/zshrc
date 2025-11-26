@@ -61,6 +61,11 @@ if [[ -d "${EZA_ROOT}" ]]; then
   fpath=("${EZA_ROOT}/completions/zsh" $fpath)
 fi
 
+# just
+if which just >/dev/null; then
+  eval "$(just --completions zsh)"
+fi
+
 # select word style
 autoload -U select-word-style
 select-word-style bash
