@@ -41,7 +41,7 @@ return {
           typescript = { "deno_fmt" },
           typescriptreact = { "deno_fmt" },
           typst = { "typstyle" },
-          yaml = { "yamlfmt" },
+          yaml = { "deno_fmt" },
           zsh = { "shfmt" },
         },
       }
@@ -62,7 +62,6 @@ return {
         "stylua",
         "tombi",
         "typstyle",
-        "yamlfmt",
       },
     },
   },
