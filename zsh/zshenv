@@ -17,9 +17,9 @@ fi
 if which asdf >/dev/null; then
   export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
   path=("${ASDF_DATA_DIR}/shims" $path)
-
-  if [[ -d "${ASDF_DATA_DIR}/plugins/golang" ]]; then
-    . "${ASDF_DATA_DIR}/plugins/golang/set-env.zsh"
+  ASDF_GOLANG_ROOT="${ASDF_DATA_DIR}/plugins/golang"
+  if [[ -d "${ASDF_GOLANG_ROOT}" ]]; then
+    . "${ASDF_GOLANG_ROOT}/set-env.zsh"
   fi
 fi
 
