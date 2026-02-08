@@ -10,6 +10,7 @@ CONFIGS=(
   "atuin"
   "kitty"
   "nvim"
+  "rustfmt"
   "starship"
   "tmux"
   "zsh"

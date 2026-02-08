@@ -15,6 +15,7 @@ return {
             options = {
               -- The default edition of Rust to use when no Cargo.toml file is found
               default_edition = "2024",
+              nightly = true,
             },
           },
           shfmt = { prepend_args = { "-i", "4" } },
