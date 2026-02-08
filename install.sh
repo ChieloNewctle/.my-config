@@ -8,6 +8,7 @@ TIMESTAMP="$(date +%s)"
 
 CONFIGS=(
   "atuin"
+  "kitty"
   "nvim"
   "starship"
   "tmux"
