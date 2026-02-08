@@ -23,6 +23,8 @@ vim.g.lazyvim_picker = "snacks"
 
 vim.g.autoformat = false
 
+vim.g.transparent_enabled = true
+
 local function set_neovide_options()
   if not vim.g.neovide then
     return

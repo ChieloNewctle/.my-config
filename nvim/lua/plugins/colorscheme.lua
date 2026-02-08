@@ -52,10 +52,9 @@ return {
   },
   {
     "xiyaowong/transparent.nvim",
-    enabled = not vim.g.neovide,
+    enabled = true,
     lazy = false,
     opts = {
-      extra_groups = { "NeoTreeNormal", "NeoTreeNormalNC" },
       exclude_groups = { "NotifyBackground" },
     },
   },
