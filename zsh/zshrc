@@ -1,11 +1,3 @@
-# terminal integration
-if [[ ! -v SSH_CONNECTION ]]; then
-  WEZTERM_SH_FILE="${HOME}/.config/zsh/wezterm.sh"
-  if [[ -e "${WEZTERM_SH_FILE}" ]]; then
-    source "${WEZTERM_SH_FILE}"
-  fi
-fi
-
 # asdf completions
 if [[ -v ASDF_DATA_DIR ]]; then
   _asdf_completions="${ASDF_DATA_DIR}/completions/_asdf"
