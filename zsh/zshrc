@@ -63,4 +63,4 @@ autoload -U select-word-style
 select-word-style bash
 
 # customization
-alias without_proxy='env http_proxy="" https_proxy=""'
+alias without_proxy='env http_proxy="" https_proxy="" HTTP_PROXY="" HTTPS_PROXY=""'
