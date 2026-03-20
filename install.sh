@@ -8,6 +8,7 @@ TIMESTAMP="$(date +%s)"
 
 CONFIGS=(
   "atuin"
+  "direnv"
   "kitty"
   "nvim"
   "rustfmt"

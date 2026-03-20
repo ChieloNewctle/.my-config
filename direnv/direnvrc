@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+layout_uv() {
+  local venv_path="${1:-.venv}"
+  shift
+
+  if [[ ! -d "$venv_path" ]]; then
+    log_status "No $venv_path found. Creating with uv..."
+    uv venv "$@" --prompt "$(basename "$PWD")" "$venv_path"
+  fi
+
+  VIRTUAL_ENV="$(realpath "$venv_path")"
+
+  if [[ -n "${PYTHONHOME-}" ]]; then
+    unset PYTHONHOME
+  fi
+
+  export VIRTUAL_ENV
+
+  local bin_path="$VIRTUAL_ENV/bin"
+  PATH_add "$bin_path"
+
+  if [[ -d "$bin_path" ]]; then
+    watch_file "$bin_path"
+  fi
+}
