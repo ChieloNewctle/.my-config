@@ -34,7 +34,7 @@ return {
           json5 = { "prettier" },
           jsonc = { "deno_fmt" },
           lua = { "stylua" },
-          markdown = { "deno_fmt", "cbfmt" },
+          markdown = { "deno_fmt" },
           python = { "ruff_format" },
           rust = { "rustfmt" },
           scss = { "deno_fmt" },

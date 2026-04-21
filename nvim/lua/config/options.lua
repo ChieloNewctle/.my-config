@@ -20,6 +20,7 @@ vim.cmd("set clipboard+=unnamedplus")
 -- end
 
 vim.g.lazyvim_picker = "snacks"
+vim.g.lazyvim_prettier_needs_config = true
 
 vim.g.autoformat = false
 
