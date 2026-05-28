@@ -43,6 +43,7 @@ return {
           typescript = { "deno_fmt" },
           typescriptreact = { "deno_fmt" },
           typst = { "typstyle" },
+          vue = { "deno_fmt" },
           yaml = { "deno_fmt" },
           zsh = { "shfmt" },
         },
