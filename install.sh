@@ -19,6 +19,7 @@ CONFIGS=(
 backup_and_link_to() {
   symlink="$1"
   target="$2"
+  mkdir -p "$(dirname "$symlink")"
   if [[ -L "$symlink" ]] && [[ "$(readlink "$symlink")" == "$target" ]]; then
     echo "$symlink has been installed"
   else
