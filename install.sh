@@ -9,6 +9,7 @@ TIMESTAMP="$(date +%s)"
 CONFIGS=(
   "atuin"
   "direnv"
+  "fontconfig/conf.d"
   "nvim"
   "rustfmt"
   "starship"
