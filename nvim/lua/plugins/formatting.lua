@@ -44,6 +44,7 @@ return {
           typescriptreact = { "deno_fmt" },
           typst = { "typstyle" },
           vue = { "deno_fmt" },
+          xml = { "xmllint" },
           yaml = { "deno_fmt" },
           zsh = { "shfmt" },
         },
