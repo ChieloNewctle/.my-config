@@ -32,7 +32,9 @@ _sync_tmux_environment() {
   [[ -n ${TMUX-} ]] || return 0
 
   local name entry
-  for name in SSH_AUTH_SOCK DISPLAY WAYLAND_DISPLAY XAUTHORITY; do
+  for name in \
+    SSH_AUTH_SOCK SSH_CLIENT SSH_CLIENT SSH_TTY \
+    DISPLAY WAYLAND_DISPLAY XAUTHORITY; do
     entry=$(tmux show-environment $name 2>/dev/null) || continue
 
     case $entry in
