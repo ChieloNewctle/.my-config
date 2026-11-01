@@ -18,7 +18,6 @@ return {
               nightly = true,
             },
           },
-          shfmt = { prepend_args = { "-i", "4" } },
         },
         formatters_by_ft = {
           bash = { "shfmt" },
