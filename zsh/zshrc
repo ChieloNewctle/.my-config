@@ -25,6 +25,26 @@ if [[ -d "${ZIM_HOME}" ]]; then
   source "${ZIM_HOME}/init.zsh"
 fi
 
+# sync env var with tmux
+autoload -Uz add-zsh-hook
+
+_sync_tmux_environment() {
+  [[ -n ${TMUX-} ]] || return 0
+
+  local name entry
+  for name in SSH_AUTH_SOCK DISPLAY WAYLAND_DISPLAY XAUTHORITY; do
+    entry=$(tmux show-environment $name 2>/dev/null) || continue
+
+    case $entry in
+    ${name}=*) export $entry ;;
+    -${name}) unset $name ;;
+    esac
+  done
+}
+
+add-zsh-hook precmd _sync_tmux_environment
+add-zsh-hook preexec _sync_tmux_environment
+
 # starship
 export STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"
 if ! which starship >/dev/null; then
