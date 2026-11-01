@@ -23,10 +23,6 @@ if which asdf >/dev/null; then
   fi
 fi
 
-if which uv >/dev/null; then
-  path=("$(dirname $(realpath $(which python)))" $path)
-fi
-
 # direnv
 if which direnv >/dev/null; then
   if [[ (-v NVIM || -v TMUX) && -v DIRENV_DIR ]]; then
