@@ -34,9 +34,9 @@ return {
           json5 = { "prettier" },
           jsonc = { "deno_fmt" },
           lua = { "stylua" },
-          markdown = { "deno_fmt" },
+          markdown = { "injected", "rumdl" },
           python = { "ruff_format" },
-          rust = { "rustfmt" },
+          rust = { "rumdl", "rustfmt" },
           scss = { "deno_fmt" },
           sh = { "shfmt" },
           toml = { "tombi" },
@@ -67,6 +67,15 @@ return {
         "stylua",
         "tombi",
         "typstyle",
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    optional = true,
+    opts = {
+      linters_by_ft = {
+        markdown = {},
       },
     },
   },
