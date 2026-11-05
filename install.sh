@@ -36,6 +36,6 @@ for name in "${CONFIGS[@]}"; do
   backup_and_link_to "$HOME/.config/$name" "$SCRIPT_DIR/$name"
 done
 
-for item in zshenv zshrc; do
-  backup_and_link_to "$HOME/.$item" "$SCRIPT_DIR/zsh/$item"
+for item in zsh/zshenv zsh/zshrc zsh/zprofile fbterm/fbtermrc; do
+  backup_and_link_to "$HOME/.$(basename $item)" "$SCRIPT_DIR/$item"
 done

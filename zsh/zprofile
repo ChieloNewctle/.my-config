@@ -1,0 +1,7 @@
+if [[ -o login && -o interactive ]] &&
+   [[ "$TTY" == /dev/tty[2-6] ]] &&
+   [[ -z "$DISPLAY" && -z "$WAYLAND_DISPLAY" ]] &&
+   [[ -z "$SSH_CONNECTION" ]] &&
+   [[ -x /usr/bin/fbterm ]]; then
+   exec /usr/bin/fbterm
+fi
